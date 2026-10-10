@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>para alice ♡</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  color: #873b59;
+  background: #fff0f5;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 65px 20px 45px;
+  background: linear-gradient(145deg, #ffd6e5, #fff0f5);
+}
+
+h1 {
+  font-size: clamp(36px, 10vw, 58px);
+  margin: 12px 0;
+  color: #c04f7b;
+}
+
+h2 { color: #c04f7b; }
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.heart {
+  font-size: 35px;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}
+
+section {
+  padding: 35px 18px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255,255,255,.82);
+  padding: 22px;
+  margin: 17px 0;
+  border: 1px solid #ffc1d7;
+  border-radius: 22px;
+  box-shadow: 0 6px 18px #e99bb522;
+}
+
+button, .music {
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  background: #d96893;
+  color: white;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 6px;
+}
+
+button:hover, .music:hover {
+  background: #b94876;
+}
+
+.secret {
+  display: none;
+  padding: 12px;
+  animation: appear .4s ease;
+}
+
+.secret.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.option {
+  display: block;
+  width: 100%;
+  background: #ffe0eb;
+  color: #873b59;
+  border: 1px solid #f5b1cb;
+}
+
+#answer {
+  min-height: 45px;
+  font-weight: bold;
+}
+
+footer {
+  background: #ffd6e5;
+  padding: 30px 15px;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp 6s linear forwards;
+  z-index: 5;
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="heart">♡</div>
+  <p>um cantinho feito especialmente para</p>
+  <h1>alice</h1>
+  <p>de alguém que ama ter voce na vida ♡</p>
+  <button onclick="document.getElementById('carta').scrollIntoView({behavior:'smooth'})">
+    abra sua cartinha 💌
+  </button>
+</header>
+
+<section id="carta">
+  <div class="card">
+    <h2>minha alice ♡</h2>
+    <p>
+      eu fiz esse cantinho pensando em voce, porque queria
+      ter um lugarzinho que fosse nosso, cheio de carinho,
+      palavras bonitas e pequenos detalhes que me lembrassem
+      de voce.
+    </p>
+    <p>
+      talvez eu não consiga explicar tudo o que sinto,
+      mas quero que voce saiba que sua presença deixa
+      meus dias mais especiais. gosto de ter voce comigo,
+      de conversar com voce e de poder chamar voce de minha.
+    </p>
+    <p>esse pequeno universo é todinho seu. ♡</p>
+  </div>
+</section>
+
+<section>
+  <h2>cartinhas secretas 💌</h2>
+  <p>escolha uma cartinha e descubra o que tem dentro.</p>
+
+  <div class="card">
+    <button onclick="abrir('c1')">♡ cartinha 1</button>
+    <div id="c1" class="secret">
+      <p>se eu pudesse guardar um sentimento num potinho,
+      seria a felicidade de ter voce na minha vida. ♡</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button onclick="abrir('c2')">🌷 cartinha 2</button>
+    <div id="c2" class="secret">
+      <p>voce merece receber carinho até nos dias em que
+      não consegue enxergar o quanto é especial.
+      espero poder te lembrar disso. 💗</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button onclick="abrir('c3')">💗 cartinha 3</button>
+    <div id="c3" class="secret">
+      <p>entre tantas coisas bonitas que existem no mundo,
+      conhecer voce é uma das minhas favoritas.
+      eu escolheria viver esse carinho de novo. ♡</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>vamos ver se voce me conhece? 🎀</h2>
+  <div class="card">
+    <p><b>qual é a coisa mais importante desse site?</b></p>
+    <button class="option" onclick="responder(false)">
+      as cores rosas
+    </button>
+    <button class="option" onclick="responder(true)">
+      o amor que coloquei nele
+    </button>
+    <button class="option" onclick="responder(false)">
+      os coraçõezinhos
+    </button>
+    <p id="answer"></p>
+  </div>
+</section>
+
+<section>
+  <h2>uma música para voce 🎧</h2>
+  <div class="card">
+    <p><i>i wanna be your girlfriend</i></p>
+    <p>porque algumas músicas parecem dizer aquilo
+    que o coração sente. ♡</p>
+    <a class="music"
+       href="https://www.youtube.com/results?search_query=i+wanna+be+your+girlfriend+girl+in+red"
+       target="_blank" rel="noopener">
+      ouvir nossa música ♫
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <div class="heart">♡</div>
+    <h2>uma última coisinha...</h2>
+    <p>alice, obrigada por existir e por fazer parte
+    da minha vida. espero que, sempre que voce abrir
+    esse site, lembre que existe alguém que preparou
+    cada pedacinho dele pensando em voce.</p>
+    <button onclick="document.getElementById('final').classList.toggle('show')">
+      toque para descobrir ♡
+    </button>
+    <div id="final" class="secret">
+      <h2>eu amo voce, alice. 💗</h2>
+      <p>com amor, da sua namorada ♡</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  feito com amor, especialmente para alice ♡
+  <p>um pedacinho do meu coração na internet.</p>
+</footer>
+
+<script>
+function abrir(id) {
+  document.getElementById(id).classList.toggle('show');
+}
+
+function responder(certo) {
+  document.getElementById('answer').textContent = certo
+    ? 'ACERTOU! 💗 foi tudo feito com amor por voce!'
+    : 'KKKK tenta de novo, amorzinho! ♡';
+}
+
+function criarCoracao() {
+  const h = document.createElement('span');
+  h.className = 'floating';
+  h.textContent = ['♡', '♥', '💕', '୨୧'][Math.floor(Math.random()*4)];
+  h.style.left = Math.random() * 100 + 'vw';
+  h.style.fontSize = (16 + Math.random() * 18) + 'px';
+  h.style.color = '#df76a0';
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}
+
+setInterval(criarCoracao, 900);
+</script>
+
+</body>
+</html>
